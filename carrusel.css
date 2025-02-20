@@ -1,0 +1,69 @@
+/* Estilos básicos para el carrusel */
+.carousel-container {
+    position: relative;
+    width: 100vw; /* Ocupa el 100% del ancho de la pantalla */
+    height: 100vh; /* Ocupa el 100% de la altura de la pantalla */
+    margin: 0;
+    overflow: hidden; /* Esconde las imágenes fuera de la vista */
+}
+
+.carousel {
+    display: flex; /* Alinea las imágenes en fila */
+    transition: transform 0.5s ease-in-out; /* Transición suave al mover */
+    width: 300%; /* El carrusel tiene el 300% de ancho total, ya que tiene 3 imágenes */
+}
+
+.carousel img {
+    width: 100vw; /* Cada imagen ocupa todo el ancho de la pantalla */
+    height: 100vh; /* Cada imagen ocupa toda la altura de la pantalla */
+    object-fit: cover; /* Las imágenes se ajustan al contenedor sin distorsionarse */
+}
+
+/* Estilo para los botones */
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Media queries para dispositivos más pequeños */
+
+/* Para pantallas de tamaño tablet o más pequeñas */
+@media (max-width: 768px) {
+    .carousel-container {
+        height: 70vh; /* Menos altura para dispositivos más pequeños */
+    }
+    .carousel img {
+        height: 70vh; /* Las imágenes ocupan un 70% de la altura de la pantalla */
+    }
+}
+
+/* Para pantallas de móviles más pequeños */
+@media (max-width: 480px) {
+    .carousel-container {
+        height: 60vh; /* Aún menos altura para móviles */
+    }
+    .carousel img {
+        height: 60vh; /* Las imágenes ocupan un 60% de la altura de la pantalla */
+    }
+}
